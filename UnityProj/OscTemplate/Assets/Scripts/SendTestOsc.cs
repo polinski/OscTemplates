@@ -18,13 +18,11 @@ public class SendTestOsc : MonoBehaviour {
 	
 	}
 
-	// checks to see that both address and message data have been entered. if both true, sends the message and then resets the updated bools.
+	// checks to see that both address and message data have been entered. if both true, sends the message.
 	public void SendOutTestMessage(){
 
 		if (addressUpdated && messageUpdated){
 			oscCodeSender.SendOsc(address,message);
-			addressUpdated = false;
-			messageUpdated = false;
 		}
 	}
 
