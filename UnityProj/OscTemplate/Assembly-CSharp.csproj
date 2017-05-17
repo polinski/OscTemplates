@@ -46,10 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\OscLog.cs" />
      <Compile Include="Assets\Scripts\OscCodeSender.cs" />
+     <Compile Include="Assets\Scripts\OscLog.cs" />
      <Compile Include="Assets\Scripts\OscReceiver.cs" />
-     <Compile Include="Assets\SendTestOsc.cs" />
+     <Compile Include="Assets\Scripts\SendTestOsc.cs" />
      <Compile Include="Assets\UniOSC\Scripts\ClassBased\Demo\UniOSCClassBasedDemo.cs" />
      <Compile Include="Assets\UniOSC\Scripts\ClassBased\Example.Classes\UniOSCEventDispatcherCBImplementation.cs" />
      <Compile Include="Assets\UniOSC\Scripts\ClassBased\Example.Classes\UniOSCEventDispatcherCBRawImplementation.cs" />
@@ -114,7 +114,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="OSCsharp">
- <HintPath>/Users/Turing/Documents/Unity/Projects/OscTemplate/Assets/UniOSC/Lib/OSCsharp.dll</HintPath>
+ <HintPath>/Users/Turing/GitHub/OscTemplates/UnityProj/OscTemplate/Assets/UniOSC/Lib/OSCsharp.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
