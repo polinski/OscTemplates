@@ -34,3 +34,5 @@ sysinfo.txt
 *.unitypackage
 
 UnityProj/OscTemplate/Library/CurrentLayout.dwlt
+
+UnityProj/OscTemplate/OscTemplate.userprefs
