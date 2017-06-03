@@ -1,9 +1,9 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{74568C5F-FCEC-F070-324A-3420159E2301}") = "OscTemplate", "Assembly-CSharp.csproj", "{11700378-6074-177F-4CD9-E6AEF394AFE7}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OscTemplate", "Assembly-CSharp.csproj", "{11700378-6074-177F-4CD9-E6AEF394AFE7}"
 EndProject
-Project("{74568C5F-FCEC-F070-324A-3420159E2301}") = "OscTemplate", "Assembly-CSharp-Editor.csproj", "{04473721-44B4-1BE2-2882-68B5E18F9C9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OscTemplate", "Assembly-CSharp-Editor.csproj", "{04473721-44B4-1BE2-2882-68B5E18F9C9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
