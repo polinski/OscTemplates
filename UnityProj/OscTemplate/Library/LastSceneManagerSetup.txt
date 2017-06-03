@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MountainState.unity
+- path: Assets/Scenes/EventManagerTests.unity
   isLoaded: 1
   isActive: 1

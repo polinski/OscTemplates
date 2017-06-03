@@ -82,6 +82,13 @@ public class MountainStreams : MonoBehaviour {
 
 	public void GenerateStreams(int numStreams){
 
+		// delete any previous visualisation.
+		GameObject[] dots = GameObject.FindGameObjectsWithTag("dot");
+
+		for (int i = 0 ; i < dots.Length; i++){
+			Destroy(dots[i]);
+		}
+
 		streamsList = new List<List<int>>();
 
 		for (int x = 0 ; x < numStreams; x++){

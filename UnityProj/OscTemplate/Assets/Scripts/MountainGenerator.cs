@@ -10,7 +10,6 @@ public class MountainGenerator : MonoBehaviour {
 	private MountainStreams mountainStreams;
 	private OscCodeSender oscCodeSender;
 
-
 	// Use this for initialization
 	void Start () {
 
@@ -24,21 +23,29 @@ public class MountainGenerator : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.O)){
 
-			Debug.Log("intruction reluctantly acknowledged");
-			StartCoroutine(GenerateMountain());
+			Debug.Log("GENERATING WHOLE MOUNTAIN");
+			StartCoroutine(GenerateMountain(true));
+
+		}
+		if (Input.GetKeyDown(KeyCode.S)){
+
+			Debug.Log("GENERATING MOUNTAIN STREAMS");
+			StartCoroutine(GenerateMountain(false));
 
 		}
 
 	}
 
-	IEnumerator GenerateMountain(){
+	IEnumerator GenerateMountain(bool wholeMountain){
 
-		mountainRoots.GenerateRoots();
-		Debug.Log("generating roots");
+		if (wholeMountain){
+			mountainRoots.GenerateRoots();
+			Debug.Log("generating roots");
 
-		while (!mountainRoots.rootsGenerated){
-			Debug.Log("waiting for roots");
-			yield return new WaitForEndOfFrame();
+			while (!mountainRoots.rootsGenerated){
+				Debug.Log("waiting for roots");
+				yield return new WaitForEndOfFrame();
+			}
 		}
 
 		mountainStreams.GenerateStreams(numStreams);
@@ -49,11 +56,20 @@ public class MountainGenerator : MonoBehaviour {
 			yield return new WaitForEndOfFrame();
 		}
 
-		if (mountainRoots && mountainStreams) {
+		if (wholeMountain){
+			if (mountainRoots && mountainStreams) {
 
-			Debug.Log("making new mountain");
-			Mountain m = new Mountain(mountainRoots.notes, mountainStreams.streamsList);
-			SendMountainViaOsc(m);
+				Debug.Log("making new mountain");
+				Mountain m = new Mountain(mountainRoots.notes, mountainStreams.streamsList);
+				SendMountainViaOsc(m);
+			}
+		} else {
+			if (mountainStreams) {
+
+				Debug.Log("making new streams");
+				Mountain m = new Mountain(mountainRoots.notes, mountainStreams.streamsList);
+				SendMountainViaOsc(m);
+			}
 		}
 
 		yield return null;

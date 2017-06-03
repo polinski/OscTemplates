@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UniOSC;
 
 public class EventLog : MonoBehaviour {
 
+	OscCodeSender oscCode;
 
 	void OnEnable () {
 
@@ -23,24 +25,38 @@ public class EventLog : MonoBehaviour {
 
 	}
 
-	void Intro(){
+	void Start(){
 
-		Debug.Log("INTRO STARTED");
+		oscCode = GameObject.Find("OscIO").GetComponent<OscCodeSender>();
+
 	}
 
-	void Verse(){
+	void Intro(object obj){
 
-		Debug.Log("VERSE STARTED");
+		Debug.Log("INTRO STARTED" + EventManager.EventIndex);
+		EventManager.EventIndex++;
+		oscCode.SendOsc("/Max_DecompMain", "INTRO STARTED");
 	}
 
-	void Chorus(){
+	void Verse(object obj){
 
-		Debug.Log("CHORUS STARTED");
+		Debug.Log("VERSE STARTED"+ EventManager.EventIndex);
+		EventManager.EventIndex++;
+		oscCode.SendOsc("/Max_DecompMain", "VERSE STARTED");
 	}
 
-	void Outro(){
+	void Chorus(object obj){
 
-		Debug.Log("OUTRO STARTED");
+		Debug.Log("CHORUS STARTED"+ EventManager.EventIndex);
+		EventManager.EventIndex++;
+		oscCode.SendOsc("/Max_DecompMain", "CHORUS STARTED");
+	}
+
+	void Outro(object obj){
+
+		Debug.Log("OUTRO STARTED"+ EventManager.EventIndex);
+		EventManager.EventIndex++;
+		oscCode.SendOsc("/Max_DecompMain", "OUTRO STARTED");
 	}
 
 

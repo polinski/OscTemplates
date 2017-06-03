@@ -103,12 +103,12 @@ public class MountainRoots : MonoBehaviour {
 	public void GenerateRoots(){
 
 		// delete any previous visualisation.
-		GameObject[] dots = GameObject.FindGameObjectsWithTag("dot");
+		GameObject[] roots = GameObject.FindGameObjectsWithTag("root");
 
 		notes.Clear();
 
-		for (int i = 0 ; i < dots.Length; i++){
-			Destroy(dots[i]);
+		for (int i = 0 ; i < roots.Length; i++){
+			Destroy(roots[i]);
 		}
 
 		int root = 0; // set the root to zero.
@@ -132,7 +132,7 @@ public class MountainRoots : MonoBehaviour {
 			// create vis of note.
 			Vector3 pos = new Vector3(i+spacing,note,0); 
 			GameObject thisDot = Instantiate(dot, pos, Quaternion.identity) as GameObject;
-			thisDot.tag = "dot";
+			thisDot.tag = "root";
 		}
 		rootsGenerated = true;
 	}
